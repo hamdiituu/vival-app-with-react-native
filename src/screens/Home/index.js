@@ -11,7 +11,10 @@ import {Search} from '../../components/icons';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  const goToDetail = () => {
+    navigation.navigate('Detail');
+  };
   return (
     <View style={styles.container}>
       <View style={styles.searchWrapper}>
@@ -35,7 +38,7 @@ const Home = () => {
       <View style={styles.popularWrapper}>
         <Text style={styles.popularTitle}>Popular</Text>
         <View style={styles.popularItemsWrapper}>
-          <TouchableOpacity style={styles.popularItem}>
+          <TouchableOpacity onPress={goToDetail} style={styles.popularItem}>
             <ImageBackground
               style={styles.popularItemImage}
               source={require('../../../assets/image/backpack-home-sub-1.jpg')}>
@@ -50,7 +53,7 @@ const Home = () => {
 
             <Text style={styles.popularItemTitle}>DENVER DUFFLE BAG NAVY</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.popularItem}>
+          <TouchableOpacity onPress={goToDetail} style={styles.popularItem}>
             <ImageBackground
               style={styles.popularItemImage}
               source={require('../../../assets/image/backpack-home-sub-1.jpg')}>
@@ -65,7 +68,6 @@ const Home = () => {
 
             <Text style={styles.popularItemTitle}>DENVER DUFFLE BAG NAVY</Text>
           </TouchableOpacity>
-        
         </View>
       </View>
     </View>
