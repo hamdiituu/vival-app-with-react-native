@@ -16,4 +16,4 @@
 
 _Home Page_
 
-![](./images/home.png)
+![](./images/app.png)
